@@ -34,6 +34,10 @@ defmodule Lista do
   	[ head + num | rot(tail, num) ]
   end
 
+  def span(x,x), do: [ x | []]
+  def span(x,y) do
+    [ x | span(x + 1, y) ]
+  end
 
 end
 
@@ -45,4 +49,5 @@ end
 #IO.puts(inspect(Lista.map('nop',&(&1 - 13))))
 
 #IO.puts(inspect(Lista.rot('xikaos', 13)))
+IO.puts(inspect(Lista.span(0,2)))
 

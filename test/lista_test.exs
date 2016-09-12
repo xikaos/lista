@@ -19,11 +19,14 @@ defmodule ListaTest do
   		[["c","a"],["m","i"],["l","a"]],
   		"",
   		fn(acc, [a,b]) -> acc <> (a <> b) end) 
-  	==
-  	"camila"
+  	== "camila"
   end
 
   test "Rotation function" do
   	assert Lista.rot('xikaos',13) == '?vxn??'
   end
+
+  test "Span function" do
+    assert Lista.span(0,4) == [0, 1, 2,3,4]
+  end 
 end
