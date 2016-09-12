@@ -1,10 +1,9 @@
 require IEx
 defmodule Lista do
-	def map([], _), do: []
+  def map([], _), do: []
 	def map([head | tail], fun), do: [ fun.(head) | map(tail,fun)]
 
 	def reduce([], acc, _fun), do: acc
-  #def reduce([head | tail], acc, fun), do: reduce(tail, fun.(acc, head), fun)
 	def reduce([head | tail], acc, fun) do
    reduce(tail, fun.(acc, head), fun)
   end
@@ -40,14 +39,3 @@ defmodule Lista do
   end
 
 end
-
-
-#IO.puts(inspect(Lista.mapsum([1,2,3,4],&(&1 + 1))))
-
-#IO.puts(inspect(Lista.max([1,2,3,5,2,6,12,33,23,0])))
-
-#IO.puts(inspect(Lista.map('nop',&(&1 - 13))))
-
-#IO.puts(inspect(Lista.rot('xikaos', 13)))
-IO.puts(inspect(Lista.span(0,2)))
-
