@@ -1,4 +1,3 @@
-require IEx
 defmodule Lista do
   def map([], _), do: []
 	def map([head | tail], fun), do: [ fun.(head) | map(tail,fun)]
